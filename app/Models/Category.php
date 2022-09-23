@@ -8,11 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     use HasFactory;
-    
     protected $guarded=['id'];
-
-    public function category()
+    public function Posts ()
     {
-        return $this->belongsTo(Category::class);
+        return $this->hasMany(Post::class);
     }
+
+
+    
 }
